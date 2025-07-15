@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abrir Chamado - Helpdesk Carris</title>
+  <link rel="stylesheet" href="chamado.min.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="Logo da Carris" id="logo" />
+
+    <form id="formChamado" aria-label="Formulário para abrir chamado">
+      <h1>Abrir Chamado</h1>
+
+      <label for="nome">Seu nome:</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        required
+        autocomplete="off"
+        aria-required="true"
+        aria-describedby="nomeHelp"
+        placeholder="Digite seu nome completo"
+      />
+      <small id="nomeHelp" class="sr-only">Campo obrigatório</small>
+
+      <label for="setor">Setor:</label>
+      <select
+        id="setor"
+        name="setor"
+        required
+        aria-required="true"
+        aria-describedby="setorHelp"
+      >
+        <option value="" disabled selected>Selecione seu setor</option>
+        <option value="outro">Outro</option>
+
+      </select>
+      <small id="setorHelp" class="sr-only">Campo obrigatório</small>
+
+      <label for="problema">Descrição do problema:</label>
+      <textarea
+        id="problema"
+        name="problema"
+        rows="5"
+        required
+        aria-required="true"
+        placeholder="Descreva seu problema detalhadamente"
+        aria-describedby="problemaHelp"
+      ></textarea>
+      <small id="problemaHelp" class="sr-only">Campo obrigatório</small>
+
+      <button type="submit" id="btnSubmit">Abrir Chamado</button>
+
+      <div class="message" id="msgResposta" role="alert" aria-live="polite"></div>
+    </form>
+  </div>
+
+  <script type="module" src="chamado.obf.js"></script>
+</body>
+</html>

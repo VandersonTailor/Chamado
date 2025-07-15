@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Histórico do Helpdesk Carris</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.min.css" />
+  </head>
+  <body>
+  <header>
+  <div id="welcome">Bem-vindo!</div>
+  <button id="btnLogout">Sair</button>
+</header>
+
+  <h1> Histórico do Helpdesk Carris</h1>
+  <img src="assets/logo.png" alt="Logo da Carris" id="logo">
+
+  <div class="controls">
+    <input type="text" id="filtroNome" placeholder="Filtrar por nome" />
+    <input type="date" id="filtroData" />
+    <select id="filtroStatus">
+      <option value="">Todos</option>
+      <option value="pendente">Pendentes</option>
+      <option value="resolvido">Resolvidos</option>
+    </select>
+    <button onclick="filtrar()">🔍 Filtrar</button>
+    <button id="exportarCSV">⬇️ Exportar CSV</button>
+  </div>
+
+  <canvas id="grafico" style="max-width: 600px; margin-bottom: 20px"></canvas>
+
+  <div id="historico"></div>
+
+  <div id="detalhesChamado" style="display: none; max-width: 600px;">
+  <h2>Detalhes do chamado</h2>
+  <div id="infoChamado"></div>
+  <div class="item">
+  <span class="iconeToggle">🔽</span>
+  <div>... resto ...</div>
+</div>
+
+
+  <label for="comentario">Observações:</label>
+  <textarea id="comentario" rows="4"></textarea>
+
+  <div style="margin-top: 10px">
+    <label id="labelResolvido">
+      <input type="checkbox" id="chamadoResolvido" /> Chamado resolvido
+    </label>
+  </div>
+
+  <button class="btnSalvarComentario" onclick="salvarComentario()">
+    Adicionar Comentário
+  </button>
+  <button id="btnToggleDetalhes" type="button">
+    Fechar
+  </button>
+</div>
+
+
+  </div>
+
+  <script src="painel.obf.js"></script>
+</body>
+
+  </body>
+</html>

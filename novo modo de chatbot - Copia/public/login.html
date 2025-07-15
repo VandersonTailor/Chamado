@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.min.css" />
+</head>
+<body>
+  <main id="login-container" role="main" aria-labelledby="loginTitle">
+    <img src="assets/logo.png" alt="Logo da Carris" id="logo" />
+    <h2 id="loginTitle">Login</h2>
+
+    <div id="error" class="error" role="alert" aria-live="assertive" style="display:none;"></div>
+
+    <form id="loginForm" aria-describedby="formHelp">
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Usuário"
+        autocomplete="username"
+        required
+        aria-required="true"
+        aria-describedby="usernameHelp"
+      />
+      <small id="usernameHelp" class="sr-only">Campo obrigatório</small>
+
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Senha"
+        autocomplete="current-password"
+        required
+        aria-required="true"
+        aria-describedby="passwordHelp"
+      />
+      <small id="passwordHelp" class="sr-only">Campo obrigatório</small>
+
+      <button type="submit" id="btnSubmit">Entrar</button>
+    </form>
+  </main>
+
+  <script src="login.obf.js" type="module"></script>
+</body>
+</html>
